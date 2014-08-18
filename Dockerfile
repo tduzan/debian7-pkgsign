@@ -4,9 +4,5 @@
 
 FROM tduzan/debian7-build
 
-#Update base system
-RUN apt-get update
-RUN apt-get upgrade -y
-
-#Install package signing tools
-RUN apt-get install -y debian-keyring gnupg2 dpkg-sig
+#Update base system and install package signing tools
+RUN apt-get update && apt-get upgrade -y && apt-get install -y debian-keyring gnupg2 dpkg-sig
